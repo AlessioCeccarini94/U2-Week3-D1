@@ -13,7 +13,7 @@ class Pet {
   checkOwner = function (petList) {
     if (petList != null && petList.length > 0) {
       return petList.some((e) => {
-        return e.ownerName === this.owneName && e.petName !== this.petName
+        return e.ownerName == this.owneName && e.petName !== this.petName
       })
     }
     return false

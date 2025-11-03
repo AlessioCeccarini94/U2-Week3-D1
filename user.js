@@ -1,12 +1,19 @@
-user = []
+const user = []
 
 class User {
   constructor(_firstName, _lastName, _age, _location) {
-    this._firstName = _firstName
-    this._lastName = _lastName
-    this._age = _age
-    this._location = _location
+    this.firstName = _firstName
+    this.lastName = _lastName
+    this.age = _age
+    this.location = _location
   }
 }
-user.push(new User())
-console.log(User("mario,mario,32,roma"))
+
+const singleUser = new User("Mario", "Rossi", "32", "Rome")
+const singleUser2 = new User("Gianni", "Bianchi", "26")
+
+user.push(singleUser)
+user.push(singleUser2)
+
+console.log(singleUser)
+console.log(user)
