@@ -7,6 +7,9 @@ class User {
     this.age = _age
     this.location = _location
   }
+  compareage = function compareage(user2) {
+    if (this.age < user2.age) return `${this._firstName} è più piccolo di `
+  }
 }
 
 const singleUser = new User("Mario", "Rossi", "32", "Rome")

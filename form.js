@@ -10,13 +10,12 @@ class Pet {
 
   //ricerca stesso owner
 
-  checkOwner = function (petList) {
-    if (petList != null && petList.length > 0) {
-      return petList.some((e) => {
-        return e.ownerName == this.owneName && e.petName !== this.petName
-      })
+  checkOwner(otherPet) {
+    if (this.ownerName === otherPet.ownerName) {
+      return true
+    } else {
+      return false
     }
-    return false
   }
 }
 
@@ -46,15 +45,13 @@ form.addEventListener("submit", (e) => {
     speciesInput,
     breedInput
   )
-
+  const sameOwner = petsList.some((pet) => {
+    pet.checkOwner(singlePet)
+  })
   petsList.push(singlePet)
   console.log(petsList)
 
-  const singlePetLi = `name: ${singlePet.petName} - owner name: ${
-    singlePet.ownerName
-  } - species: ${singlePet.species} - breed: ${
-    singlePet.breed
-  } - check owner: ${singlePet.checkOwner(petsList)}`
+  const singlePetLi = `name: ${singlePet.petName} - owner name: ${singlePet.ownerName} - species: ${singlePet.species} - breed: ${singlePet.breed} `
 
   const newLi = document.createElement("li")
   newLi.innerText = singlePetLi
